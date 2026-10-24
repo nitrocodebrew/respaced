@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+/**
+ * Header
+ * ------
+ */
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'logo searchbar links'
+                         'main-nav main-nav main-nav';
+    gap: 1rem;
+    align-items: center;
+}
+
+.header-logo { grid-area: logo; }
+#header-searchbar { grid-area: searchbar; }
+.header-quick-links { grid-area: links; }
+.header-nav { grid-area: main-nav; }
+
+.header-nav ul, .footer-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+/**
+ * Profile
+ * =======
+ */
+
+.profile-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/**
+ * User info
+ * =========
+ */
+
+ .user-info-container {
+    display: grid;
+    grid-template-columns: 175px 1fr;
+    gap: 1rem;
+    align-items: start;
+ }
+
+/**
+ * Contact table
+ * =============
+ */
+
+.user-contact-links ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 1rem;
+}
+
+@media (min-width: 860px) {
+    .profile-container {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
